@@ -6,7 +6,9 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
     "strict": true,
-    "lib": ["ES2022"]
+    "lib": ["ES2022"],
+    "resolveJsonModule": true,
+    "noImplicitAny": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
