@@ -8,6 +8,7 @@ import {
 import { deleteMessage, getMember, responseEmbed } from '../utils/functions'
 import config from '../config/config.json'
 import { logger } from '../utils/logger'
+import { t } from 'i18next'
 
 const hasPermissionsForCommand = (
   message: Message,
@@ -21,13 +22,13 @@ const hasPermissionsForCommand = (
           if (!member.permissions.has(perm))
             reject({
               type: 'MISSING_PERMISSIONS',
-              message: `${member.user.username} dosn't have permissions`,
+              message: t('ERRORS.MISSING_PERMISSIONS')
             })
         })
 
         resolve()
       })
-      .catch((err: any) => reject({ type: 'MEMBER_FETCHING', message: err }))
+      .catch((err: any) => reject({ type: 'MEMBER_FETCHING', message: t('ERRORS.FETCHING_MEMBER') }))
   })
 }
 
@@ -49,7 +50,7 @@ export const isMessageCommand = (message: Message, client: Client) => {
         if (err.type == 'MISSING_PERMISSIONS') {
           logger.error(err.message)
           const embed = responseEmbed({
-            message: 'Missing Permissions',
+            message: err.message,
             type: 'error',
           })
           message.reply({ embeds: [embed as MessageEmbed] }).then(deleteMessage)
@@ -61,7 +62,7 @@ export const isMessageCommand = (message: Message, client: Client) => {
       })
   } catch (error) {
     const embed = responseEmbed({
-      message: 'Error while executing the command',
+      message: t('ERRORS.COMMAND_NOT_EXECUTED'),
       type: 'error',
     })
     message.reply({ embeds: [embed as MessageEmbed] }).then(deleteMessage)

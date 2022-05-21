@@ -1,6 +1,8 @@
 import { Client, Message, MessageEmbed, TextChannel } from 'discord.js'
 import { deleteMessage, responseEmbed } from '../utils/functions'
 import { logger } from '../utils/logger'
+import { t } from 'i18next'
+
 
 export default {
   name: 'clear',
@@ -10,7 +12,7 @@ export default {
     let amount = args[0]
     if (!amount || isNaN(amount) || amount > 99 || amount < 1) {
       const embed = responseEmbed({
-        message: 'Amount error',
+        message: t('COMMANDS.CLEAR.AMOUNT_ERROR'),
         type: 'error',
       })
       return message

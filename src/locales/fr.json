@@ -1,0 +1,28 @@
+{
+  "translation": {
+    "MISC": {
+      "IP": "IP",
+      "CONNECTION_SUCCES": "connecté avec une aberrance hors du commun :)"
+    },
+    "COMMANDS": {
+      "CLEAR": {
+        "AMOUNT_ERROR": "vous devez entrer un nombre entre 1 et 99"
+      }
+    },
+    "EVENTS": {
+      "CLIENT_STATUS": "regarde {{players}} joueurs"
+    },
+    "ERRORS": {
+      "CLIENT_NOT_STARTED": "erreur pendant la connexion du bot",
+      "SERVER_OFFLINE": "impossible de récuperer les informations du serveur, peut etre que le serveur est hors-ligne.",
+      "DEFAULT": "une erreur s'est produite",
+      "MISSING_PERMISSIONS": "vous n'avez pas les permissions nécessaires",
+      "FETCHING_MEMBER": "une erreur s'est produite lors de la vérfication des permissions",
+      "COMMAND_NOT_EXECUTED": "une erreur s'est produite lors de l'éxecution de votre commande",
+      "CLIENT_STATUS": "une erreur s'est produite lors de la mise en place de la bio: {{err}}",
+      "FETCHING_DATA": "une erreur s'est produite pendant l'execution de la requete",
+      "MISSING_FOLDER": "tu na pas de dossiers: {{folder}}",
+      "INTERVAL_ERROR": "pour éviter que ton bot soit ban tu doit mettre minimum {{interval}}ms d'intervalle"
+    }
+  }
+}

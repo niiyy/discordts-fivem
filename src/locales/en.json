@@ -1,0 +1,28 @@
+{
+  "translation": {
+    "MISC": {
+      "IP": "IP",
+      "CONNECTION_SUCCES": "connected with succes"
+    },
+    "COMMANDS": {
+      "CLEAR": {
+        "AMOUNT_ERROR": "you need to provide a number between 1 and 99"
+      }
+    },
+    "EVENTS": {
+      "CLIENT_STATUS": "watching {{players}} players"
+    },
+    "ERRORS": {
+      "CLIENT_NOT_STARTED": "error while connecting the client {{err}}",
+      "SERVER_OFFLINE": "an error was occurred maybe the server is offline",
+      "DEFAULT": "an error was occurred",
+      "MISSING_PERMISSIONS": "you don't have permissions for that",
+      "FETCHING_MEMBER": "error while fetching member",
+      "COMMAND_NOT_EXECUTED": "error while executing the command",
+      "CLIENT_STATUS": "an error was occurred while putting client status: {{err}}",
+      "FETCHING_DATA": "an error was occurred while executing the request",
+      "MISSING_FOLDER": "you are missing the folder: {{folder}}",
+      "INTERVAL_ERROR": "to prevent your bot from being banned you need to put minimum {{interval}}ms of interval"
+    }
+  }
+}

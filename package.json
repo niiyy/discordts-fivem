@@ -24,6 +24,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "fs": "^0.0.1-security",
+    "i18next": "^21.8.3",
     "winston": "^3.7.2"
   }
 }

@@ -1,4 +1,7 @@
 export interface ConfigI {
+  GENERAL: {
+    LANGUAGE: string
+  }
   CLIENT: {
     TOKEN: string
     PREFIX: string

@@ -5,7 +5,9 @@ import { existsSync, readdirSync } from 'fs'
 import config from '../config/config.json'
 import { ConfigI } from '../types/config'
 import { logger } from '../utils/logger'
+import { t } from 'i18next'
 import path from 'path'
+import '../i18n'
 
 export class Client {
   public client: DiscordClient
@@ -49,7 +51,9 @@ export class Client {
       return
     }
 
-    logger.error(`YOU DON'T HAVE THE COMMANDS FOLDER`)
+    logger.error(t('ERRORS.MISSING_FOLDER', {
+      folder: "Commands"
+    }))
   }
 
   initEvents() {
@@ -65,7 +69,9 @@ export class Client {
       return
     }
 
-    logger.error(`YOU DON'T HAVE THE EVENTS FOLDER`)
+    logger.error(t('ERRORS.MISSING_FOLDER', {
+      folder: "Events"
+    }))
   }
 
   init() {
@@ -74,10 +80,12 @@ export class Client {
     this.client
       .login(this.config.CLIENT.TOKEN)
       .then(() => {
-        logger.info(`Client connected with succes !`)
+        logger.info(t('MISC.CONNECTION_SUCCES'))
       })
       .catch((err) => {
-        logger.error(`error while connecting the client: ${err}`)
+        logger.error(t('ERRORS.CLIENT_NOT_STARTED', {
+          err
+        }))
         process.exit(1)
       })
   }

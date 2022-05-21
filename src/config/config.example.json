@@ -1,15 +1,14 @@
 {
-    "CLIENT": {
-      "TOKEN": "YOUR CLIENT TOKEN",
-      "PREFIX": ".",
-      "STATUS": {
-        "ACTIVE": true,
-        "REFRESH_INTERVAL": 7500
-      }
-    },
-    "FIVEM": {
-      "IP": "51.178.99.166",
-      "PORT": 30120
+  "CLIENT": {
+    "TOKEN": "YOUR CLIENT TOKEN",
+    "PREFIX": ".",
+    "STATUS": {
+      "ACTIVE": true,
+      "REFRESH_INTERVAL": 7500
     }
+  },
+  "FIVEM": {
+    "IP": "51.178.99.166",
+    "PORT": 30120
   }
-  
+}
