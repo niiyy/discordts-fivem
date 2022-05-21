@@ -1,8 +1,9 @@
 import { Client as DiscordClient, Collection, Intents } from 'discord.js'
+import { removeFileExtension } from '../utils/functions'
+import { existsSync, readdirSync } from 'fs'
 import { logger } from '../utils/logger'
 import { config } from 'dotenv'
-
-console.log('Start')
+import path from 'path'
 
 export class Client {
   public client: DiscordClient
@@ -35,7 +36,37 @@ export class Client {
   }
 
 
+  initCommands() {
+    if(existsSync(path.resolve(__dirname, '../commands'))) {
+      readdirSync(path.resolve(__dirname, '../commands')).forEach(async commandFile => {
+        const command = (await import(`../commands/${commandFile}`)).default
+        this.commandsCollection.set(command.name, command)
+      })
+
+      return
+    }
+
+    logger.error(`YOU DON'T HAVE THE COMMANDS FOLDER`)
+  }
+
+  initEvents() {
+    if(existsSync(path.resolve(__dirname, '../events'))) {
+      readdirSync(path.resolve(__dirname, '../events')).forEach(async eventName => {
+        const { default: execute } = await import(`../events/${eventName}`)
+        let event = removeFileExtension(eventName)
+        this.client.on(event, (...args) => execute(...args, this.client))
+      })
+
+      return
+    }
+
+    logger.error(`YOU DON'T HAVE THE EVENTS FOLDER`)
+  }
+
+
   init() {
+    this.initCommands()
+    this.initEvents()
     this.client
       .login(this.config.parsed.CLIENT_TOKEN)
       .then(() => {
