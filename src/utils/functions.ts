@@ -3,6 +3,7 @@ import { SimpleEmbedI } from '../types/function'
 import config from '../config/config.json'
 import { logger } from './logger'
 import axios from 'axios'
+import { t } from 'i18next'
 
 const DELETE_MESSAGE_TIMEOUT: number = 7_500
 
@@ -46,12 +47,16 @@ export const fetchServer: fetchServerT = (type) => {
               resolve([playersData, serverData])
             })
             .catch((err) => {
-              logger.error(`error while fetching server info:`, err)
+              logger.error(t('ERRORS.FETCHING_DATA', {
+                err
+              }))
               reject(err)
             })
         })
         .catch((err) => {
-          logger.error(`error while fetching server players:`, err)
+          logger.error(t('ERRORS.FETCHING_DATA', {
+            err
+          }))
           reject(err)
         })
     }
@@ -62,7 +67,9 @@ export const fetchServer: fetchServerT = (type) => {
         resolve(data)
       })
       .catch((err) => {
-        logger.error(`error while fetching server ${type}:`, err)
+        logger.error(t('ERRORS.FETCHING_DATA', {
+          err
+        }))
         reject(err)
       })
   })

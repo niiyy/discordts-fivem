@@ -20,7 +20,7 @@
       "FETCHING_MEMBER": "une erreur s'est produite lors de la vérfication des permissions",
       "COMMAND_NOT_EXECUTED": "une erreur s'est produite lors de l'éxecution de votre commande",
       "CLIENT_STATUS": "une erreur s'est produite lors de la mise en place de la bio: {{err}}",
-      "FETCHING_DATA": "une erreur s'est produite pendant l'execution de la requete",
+      "FETCHING_DATA": "une erreur s'est produite pendant l'execution de la requete: {{err}}",
       "MISSING_FOLDER": "tu na pas de dossiers: {{folder}}",
       "INTERVAL_ERROR": "pour éviter que ton bot soit ban tu doit mettre minimum {{interval}}ms d'intervalle"
     }
