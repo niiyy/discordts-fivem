@@ -1,7 +1,8 @@
 import { Client as DiscordClient, Collection, Intents } from 'discord.js'
 import { logger } from '../utils/logger'
 import { config } from 'dotenv'
-import fs from 'node:fs'
+
+console.log('Start')
 
 export class Client {
   public client: DiscordClient
@@ -9,7 +10,7 @@ export class Client {
   public commandsCollection: any
 
   constructor() {
-    this.config = config({ path: './src/config/.env' })
+    this.config = config()
     this.commandsCollection = new Collection()
     this.client = new DiscordClient({
       intents: [
