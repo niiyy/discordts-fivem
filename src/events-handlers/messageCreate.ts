@@ -48,7 +48,6 @@ export const isMessageCommand = (message: Message, client: Client) => {
       })
       .catch((err) => {
         if (err.type == 'MISSING_PERMISSIONS') {
-          logger.error(err.message)
           const embed = responseEmbed({
             message: err.message,
             type: 'error',
