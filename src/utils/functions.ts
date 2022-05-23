@@ -1,4 +1,4 @@
-import { ColorResolvable, GuildMember, Message, MessageEmbed } from 'discord.js'
+import { GuildChannel, GuildMember, Message, MessageEmbed } from 'discord.js'
 import { SimpleEmbedI } from '../types/function'
 import config from '../config/config.json'
 import { logger } from './logger'
@@ -15,6 +15,9 @@ export const removeFileExtension = (fileName: string): string => {
 
 export const getMember = (src: any, id: string): Promise<GuildMember> =>
   src.members.fetch(id)
+
+export const getChannel = (src: any, id: string): Promise<GuildChannel> =>
+  src.channels.fetch(id)
 
 export const deleteMessage = (message: Message) => {
   setTimeout(() => {
@@ -47,16 +50,20 @@ export const fetchServer: fetchServerT = (type) => {
               resolve([playersData, serverData])
             })
             .catch((err) => {
-              logger.error(t('ERRORS.FETCHING_DATA', {
-                err
-              }))
+              logger.error(
+                t('ERRORS.FETCHING_DATA', {
+                  err,
+                })
+              )
               reject(err)
             })
         })
         .catch((err) => {
-          logger.error(t('ERRORS.FETCHING_DATA', {
-            err
-          }))
+          logger.error(
+            t('ERRORS.FETCHING_DATA', {
+              err,
+            })
+          )
           reject(err)
         })
     }
@@ -67,9 +74,11 @@ export const fetchServer: fetchServerT = (type) => {
         resolve(data)
       })
       .catch((err) => {
-        logger.error(t('ERRORS.FETCHING_DATA', {
-          err
-        }))
+        logger.error(
+          t('ERRORS.FETCHING_DATA', {
+            err,
+          })
+        )
         reject(err)
       })
   })

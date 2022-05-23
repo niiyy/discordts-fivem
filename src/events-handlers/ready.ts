@@ -11,7 +11,7 @@ export const setClientStatus = (client: Client, interval: NodeJS.Timer) => {
         activities: [
           {
             name: t('EVENTS.CLIENT_STATUS', {
-              players: data.data.length
+              players: data.data.length,
             }),
           },
         ],
@@ -22,7 +22,7 @@ export const setClientStatus = (client: Client, interval: NodeJS.Timer) => {
       clearInterval(interval)
       logger.error(
         t('ERRORS.CLIENT_STATUS', {
-          err
+          err,
         })
       )
     })

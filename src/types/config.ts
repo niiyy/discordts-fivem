@@ -14,4 +14,10 @@ export interface ConfigI {
     IP: string
     PORT: number
   }
+  GUILD_MEMBER_ADD: {
+    WELCOME_MESSAGE: {
+      CHANNEL: string
+      ACTIVE: boolean
+    }
+  }
 }

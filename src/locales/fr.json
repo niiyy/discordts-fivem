@@ -10,7 +10,8 @@
       }
     },
     "EVENTS": {
-      "CLIENT_STATUS": "regarde {{players}} joueurs"
+      "CLIENT_STATUS": "regarde {{players}} joueurs",
+      "WELCOME_MESSAGE": "Bienvenue sur le serveur {{member}}"
     },
     "ERRORS": {
       "CLIENT_NOT_STARTED": "erreur pendant la connexion du bot",

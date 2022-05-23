@@ -51,9 +51,11 @@ export class Client {
       return
     }
 
-    logger.error(t('ERRORS.MISSING_FOLDER', {
-      folder: "Commands"
-    }))
+    logger.error(
+      t('ERRORS.MISSING_FOLDER', {
+        folder: 'Commands',
+      })
+    )
   }
 
   initEvents() {
@@ -69,9 +71,11 @@ export class Client {
       return
     }
 
-    logger.error(t('ERRORS.MISSING_FOLDER', {
-      folder: "Events"
-    }))
+    logger.error(
+      t('ERRORS.MISSING_FOLDER', {
+        folder: 'Events',
+      })
+    )
   }
 
   init() {
@@ -83,9 +87,11 @@ export class Client {
         logger.info(t('MISC.CONNECTION_SUCCES'))
       })
       .catch((err) => {
-        logger.error(t('ERRORS.CLIENT_NOT_STARTED', {
-          err
-        }))
+        logger.error(
+          t('ERRORS.CLIENT_NOT_STARTED', {
+            err,
+          })
+        )
         process.exit(1)
       })
   }

@@ -10,7 +10,8 @@
       }
     },
     "EVENTS": {
-      "CLIENT_STATUS": "watching {{players}} players"
+      "CLIENT_STATUS": "watching {{players}} players",
+      "WELCOME_MESSAGE": "Welcome on the server {{member}}"
     },
     "ERRORS": {
       "CLIENT_NOT_STARTED": "error while connecting the client {{err}}",

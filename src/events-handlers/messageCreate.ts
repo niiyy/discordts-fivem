@@ -22,13 +22,18 @@ const hasPermissionsForCommand = (
           if (!member.permissions.has(perm))
             reject({
               type: 'MISSING_PERMISSIONS',
-              message: t('ERRORS.MISSING_PERMISSIONS')
+              message: t('ERRORS.MISSING_PERMISSIONS'),
             })
         })
 
         resolve()
       })
-      .catch((err: any) => reject({ type: 'MEMBER_FETCHING', message: t('ERRORS.FETCHING_MEMBER') }))
+      .catch((err: any) =>
+        reject({
+          type: 'MEMBER_FETCHING',
+          message: t('ERRORS.FETCHING_MEMBER'),
+        })
+      )
   })
 }
 

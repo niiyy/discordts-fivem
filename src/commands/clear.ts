@@ -3,7 +3,6 @@ import { deleteMessage, responseEmbed } from '../utils/functions'
 import { logger } from '../utils/logger'
 import { t } from 'i18next'
 
-
 export default {
   name: 'clear',
   aliases: ['cls'],
