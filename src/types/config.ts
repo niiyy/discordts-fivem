@@ -18,6 +18,7 @@ export interface ConfigI {
     WELCOME_MESSAGE: {
       CHANNEL: string
       ACTIVE: boolean
+      EMBED_COLOR: string
     }
   }
 }

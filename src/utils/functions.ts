@@ -26,7 +26,6 @@ export const deleteMessage = (message: Message) => {
 }
 
 export const responseEmbed = ({ message, type }: SimpleEmbedI) => {
-  if (!message || !type) return
   const color = type === 'error' ? '#FF0000' : '#2EFF00'
   const embed = new MessageEmbed()
     .setDescription(message)

@@ -11,7 +11,8 @@
     },
     "EVENTS": {
       "CLIENT_STATUS": "regarde {{players}} joueurs",
-      "WELCOME_MESSAGE": "Bienvenue sur le serveur {{member}}"
+      "WELCOME_MESSAGE": "bienvenue sur le serveur `{{member}}`",
+      "INVALID_CHANNEL": "Le channel que vous avez fourni n'est pas valide"
     },
     "ERRORS": {
       "CLIENT_NOT_STARTED": "erreur pendant la connexion du bot",

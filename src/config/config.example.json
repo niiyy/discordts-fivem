@@ -1,6 +1,9 @@
 {
+  "GENERAL": {
+    "LANGUAGE": "en"
+  },
   "CLIENT": {
-    "TOKEN": "YOUR CLIENT TOKEN",
+    "TOKEN": "",
     "PREFIX": ".",
     "STATUS": {
       "ACTIVE": true,
@@ -10,5 +13,12 @@
   "FIVEM": {
     "IP": "51.178.99.166",
     "PORT": 30120
+  },
+  "GUILD_MEMBER_ADD": {
+    "WELCOME_MESSAGE": {
+      "CHANNEL": "974775347553906721",
+      "ACTIVE": true,
+      "EMBED_COLOR": "#FF0000"
+    }
   }
 }
