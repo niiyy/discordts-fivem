@@ -23,5 +23,3 @@ export const logger = createLogger({
     }),
   ],
 })
-
-// "watch:ts": "tsc --watch src/index.ts --outDir dist",

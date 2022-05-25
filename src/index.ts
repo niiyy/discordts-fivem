@@ -1,4 +1,1 @@
-import { Client } from './client/client'
-
-const client = new Client()
-client.init()
+import './client/client'

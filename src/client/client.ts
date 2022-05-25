@@ -1,6 +1,6 @@
 import { Client as DiscordClient, Collection, Intents } from 'discord.js'
 import DiscordCollecionTypes from '../types/declarations/discord'
-import { removeFileExtension } from '../utils/functions'
+import { removeFileExtension } from '../utils/misc'
 import { existsSync, readdirSync } from 'fs'
 import config from '../config/config.json'
 import { ConfigI } from '../types/config'
@@ -9,7 +9,7 @@ import { t } from 'i18next'
 import path from 'path'
 import '../i18n'
 
-export class Client {
+class Client {
   public client: DiscordClient
 
   private config: ConfigI
@@ -42,7 +42,7 @@ export class Client {
   initCommands() {
     if (existsSync(path.resolve(__dirname, '../commands'))) {
       readdirSync(path.resolve(__dirname, '../commands')).forEach(
-        async (commandFile) => {
+        async commandFile => {
           const command = (await import(`../commands/${commandFile}`)).default
           this.client.commands.set(command.name, command)
         }
@@ -61,7 +61,7 @@ export class Client {
   initEvents() {
     if (existsSync(path.resolve(__dirname, '../events'))) {
       readdirSync(path.resolve(__dirname, '../events')).forEach(
-        async (eventFile) => {
+        async eventFile => {
           const { default: execute } = await import(`../events/${eventFile}`)
           let eventName = removeFileExtension(eventFile)
           this.client.on(eventName, (...args) => execute(...args, this.client))
@@ -86,7 +86,7 @@ export class Client {
       .then(() => {
         logger.info(t('MISC.CONNECTION_SUCCES'))
       })
-      .catch((err) => {
+      .catch(err => {
         logger.error(
           t('ERRORS.CLIENT_NOT_STARTED', {
             err,
@@ -96,3 +96,8 @@ export class Client {
       })
   }
 }
+
+const client = new Client()
+client.init()
+
+export default client

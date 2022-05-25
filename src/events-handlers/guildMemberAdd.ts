@@ -5,10 +5,15 @@ import {
   MessageEmbed,
   TextChannel,
 } from 'discord.js'
-import { getChannel } from '../utils/functions'
+import { getChannel } from '../utils/misc'
 import config from '../config/config.json'
 import { logger } from '../utils/logger'
 import { t } from 'i18next'
+
+/**
+ * @param {GuildMember} member The member.
+ * @returns MessageEmbed
+ */
 
 const createWelcomeMessageEmbed = (member: GuildMember) => {
   const welcomeEmbed = new MessageEmbed()
@@ -26,6 +31,10 @@ const createWelcomeMessageEmbed = (member: GuildMember) => {
 
   return welcomeEmbed
 }
+
+/**
+ * @param {GuildMember} member The member.
+ */
 
 export const sendWelcomeMessage = async (member: GuildMember) => {
   if (!config.GUILD_MEMBER_ADD.WELCOME_MESSAGE.ACTIVE) return
