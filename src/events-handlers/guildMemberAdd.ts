@@ -1,11 +1,9 @@
 import {
-  Client,
-  ColorResolvable,
   GuildMember,
   MessageEmbed,
   TextChannel,
 } from 'discord.js'
-import { getChannel } from '../utils/misc'
+import { getChannel, randomColor } from '../utils/misc'
 import config from '../config/config.json'
 import { logger } from '../utils/logger'
 import { t } from 'i18next'
@@ -18,10 +16,7 @@ import { t } from 'i18next'
 const createWelcomeMessageEmbed = (member: GuildMember) => {
   const welcomeEmbed = new MessageEmbed()
 
-    .setColor(
-      (config.GUILD_MEMBER_ADD.WELCOME_MESSAGE
-        .EMBED_COLOR as ColorResolvable) ?? ('#FF0000' as ColorResolvable)
-    )
+    .setColor(randomColor())
     .setDescription(
       t('EVENTS.WELCOME_MESSAGE', {
         member: member.user.username,

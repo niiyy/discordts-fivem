@@ -17,6 +17,7 @@ export default {
       return message
         .reply({ embeds: [embed as MessageEmbed] })
         .then(deleteMessage)
+        .catch(err => console.log('ERROR'))
     }
     ;(message.channel as TextChannel).bulkDelete(amount++).catch(err => {
       logger.error(

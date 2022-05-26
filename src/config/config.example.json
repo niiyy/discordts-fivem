@@ -17,8 +17,27 @@
   "GUILD_MEMBER_ADD": {
     "WELCOME_MESSAGE": {
       "CHANNEL": "974775347553906721",
-      "ACTIVE": true,
-      "EMBED_COLOR": "#FF0000"
+      "ACTIVE": true
     }
+  },
+  "TICKETS": {
+    "CATEGORIES": [
+      {
+        "NAME": "help cat",
+        "BUTTON": {
+          "NAME": "Help",
+          "EMOJI": "😍",
+          "TYPE": "PRIMARY"
+        }
+      },
+      {
+        "NAME": "question cat",
+        "BUTTON": {
+          "NAME": "Questions",
+          "EMOJI": "👨‍💼",
+          "TYPE": "PRIMARY"
+        }
+      }
+    ]
   }
 }

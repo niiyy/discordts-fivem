@@ -1,3 +1,14 @@
+export interface CategorieI {
+  NAME: string
+  id?: string
+  BUTTON: {
+    NAME: string
+    EMOJI: string
+    TYPE: string
+    ID?: string
+  }
+}
+
 export interface ConfigI {
   GENERAL: {
     LANGUAGE: string
@@ -18,7 +29,9 @@ export interface ConfigI {
     WELCOME_MESSAGE: {
       CHANNEL: string
       ACTIVE: boolean
-      EMBED_COLOR: string
     }
+  }
+  TICKETS: {
+    CATEGORIES: Array<CategorieI>
   }
 }
