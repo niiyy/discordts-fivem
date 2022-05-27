@@ -1,8 +1,4 @@
-import {
-  GuildMember,
-  MessageEmbed,
-  TextChannel,
-} from 'discord.js'
+import { GuildMember, MessageEmbed, TextChannel } from 'discord.js'
 import { getChannel, randomColor } from '../utils/misc'
 import config from '../config/config.json'
 import { logger } from '../utils/logger'

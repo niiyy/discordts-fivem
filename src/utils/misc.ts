@@ -8,9 +8,7 @@ import {
 } from 'discord.js'
 import { SimpleEmbedI } from '../types/function'
 import config from '../config/config.json'
-import { logger } from './logger'
 import axios from 'axios'
-import { t } from 'i18next'
 import { writeFile } from 'fs'
 import path from 'path'
 
@@ -73,7 +71,6 @@ export const responseEmbed = ({ message, type }: SimpleEmbedI) => {
 export const uuid = (): string =>
   Math.floor(Math.random() * UUID_MAX_INT).toString(16)
 
-
 /**
  * @returns A random color.
  */
@@ -91,6 +88,34 @@ export const saveJson = (type: 'config') => {
     type === 'config' ? path.resolve(__dirname, '../config/config.json') : null
   writeFile(filePath as string, JSON.stringify(file, null, 4), err => {
     err ? console.log(err) : null
+  })
+}
+
+
+/**
+ * 
+ * @param categorieName The category name
+ * @param src The guild.
+ * @returns A Promise.
+ */
+
+export const doesCategorieExist = (
+  categorieName: string,
+  src: Guild
+): Promise<any> => {
+  return new Promise((res, rej) => {
+    src.channels.fetch().then(channels => {
+      channels.forEach(channel => {
+        if (
+          channel.name.toUpperCase() === categorieName.toUpperCase() &&
+          channel.type === 'GUILD_CATEGORY'
+        ) {
+          res('')
+        }
+      })
+
+      rej('')
+    })
   })
 }
 

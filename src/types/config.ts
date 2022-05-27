@@ -1,6 +1,7 @@
 export interface CategorieI {
   NAME: string
-  id?: string
+  ID?: string
+  CATID?: string
   BUTTON: {
     NAME: string
     EMOJI: string
@@ -32,6 +33,8 @@ export interface ConfigI {
     }
   }
   TICKETS: {
+    ACTIVE: boolean
+    STAFF_ROLES: Array<string>
     CATEGORIES: Array<CategorieI>
   }
 }

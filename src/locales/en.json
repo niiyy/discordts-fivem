@@ -14,6 +14,15 @@
       "WELCOME_MESSAGE": "welcome on the server `{{member}}`",
       "INVALID_CHANNEL": "the channel provided is not valid"
     },
+    "TICKETS": {
+      "REACT_TO_CREATE_TICKET": "Click on a button to create a ticket using the valid category.",
+      "TICKETS_NOT_ACTIVATED": "Tickets are not activated on this server.",
+      "NO_CATEGORYS": "You have no categorys on your configuration.",
+      "CLOSE_TIMER": "This channel well be closed in 5 secondes.",
+      "CATEGORY_BTN_NOT_FOUND": "This category was not found.",
+      "CHANNEL_CREATED": "`{{member}}` your channel `{{channelName}}` has been created." ,
+      "CLOSE_TICKET": "Click on the button to close the ticket."
+    },
     "ERRORS": {
       "CLIENT_NOT_STARTED": "error while connecting the client {{err}}",
       "SERVER_OFFLINE": "an error was occurred maybe the server is offline",

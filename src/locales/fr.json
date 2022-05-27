@@ -14,6 +14,15 @@
       "WELCOME_MESSAGE": "bienvenue sur le serveur `{{member}}`",
       "INVALID_CHANNEL": "Le channel que vous avez fourni n'est pas valide"
     },
+    "TICKETS": {
+      "REACT_TO_CREATE_TICKET": "Appuie sur le boutton pour ouvrir un ticket avec la bonne catégorie.",
+      "TICKETS_NOT_ACTIVATED": "Les tickets ne sont pas activer sur ce serveur.",
+      "NO_CATEGORYS": "Vous n'avez aucune catégorie dans votre configuration.",
+      "CLOSE_TIMER": "Ce channel va se fermer dans 5 secondes.",
+      "CATEGORY_BTN_NOT_FOUND": "La catégorie de ce button n'a pas était trouver.",
+      "CHANNEL_CREATED": "`{{member}}` votre channel `{{channelName}}` a était crée." ,
+      "CLOSE_TICKET": "Appuie sur le boutton pour fermer le ticket."
+    },
     "ERRORS": {
       "CLIENT_NOT_STARTED": "erreur pendant la connexion du bot",
       "SERVER_OFFLINE": "impossible de récuperer les informations du serveur, peut etre que le serveur est hors-ligne.",
