@@ -9,7 +9,7 @@ import { t } from 'i18next'
  * @param {NodeJS.Timer} interval Your interval.
  */
 
-export const setClientStatus = (client: Client, interval: NodeJS.Timer) => {
+export const setClientStatus = (client: Client, interval: NodeJS.Timer): void => {
   fetchServer('players')
     .then(data => {
       client.user?.setPresence({

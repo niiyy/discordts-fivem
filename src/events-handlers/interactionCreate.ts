@@ -13,8 +13,8 @@ import { deleteMessage, responseEmbed, uuid } from '../utils/misc'
 const findCategorieById = (id: string) =>
   config.TICKETS.CATEGORIES.filter(cat => cat.ID === id)
 
-const closeChannel = (channel: TextChannel) => {
-  const embed = responseEmbed({
+const closeChannel = (channel: TextChannel): void => {
+  const embed: MessageEmbed = responseEmbed({
     message: t('TICKETS.CLOSE_TIMER'),
     type: 'succes',
   })
@@ -40,7 +40,7 @@ export const handleInteraction = async (interaction: Interaction) => {
   const categorie: any = findCategorieById(interaction.customId)
 
   if (!categorie[0]) {
-    const embed = responseEmbed({
+    const embed : MessageEmbed = responseEmbed({
       message: t('TICKETS.CATEGORY_BTN_NOT_FOUND'),
       type: 'error',
     })
@@ -92,7 +92,7 @@ export const handleInteraction = async (interaction: Interaction) => {
 const createRowCloseChannel = (
   channel: TextChannel
 ): { row: MessageActionRow; embed: MessageEmbed } => {
-  const row = new MessageActionRow()
+  const row: MessageActionRow = new MessageActionRow()
 
   row.addComponents(
     new MessageButton()
@@ -101,7 +101,7 @@ const createRowCloseChannel = (
       .setCustomId(`close-${channel.id}`)
   )
 
-  const embed = new MessageEmbed()
+  const embed: MessageEmbed = new MessageEmbed()
     .setDescription(t('TICKETS.CLOSE_TICKET'))
     .setTimestamp()
   return {
@@ -110,7 +110,7 @@ const createRowCloseChannel = (
   }
 }
 
-const sendMessageToTicketChannel = async (channel: TextChannel) => {
+const sendMessageToTicketChannel = async (channel: TextChannel): Promise<void> => {
   const { embed, row } = await createRowCloseChannel(channel)
 
   channel.send({

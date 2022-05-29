@@ -9,7 +9,7 @@ import { t } from 'i18next'
  * @returns MessageEmbed
  */
 
-const createWelcomeMessageEmbed = (member: GuildMember) => {
+const createWelcomeMessageEmbed = (member: GuildMember): MessageEmbed => {
   const welcomeEmbed = new MessageEmbed()
 
     .setColor(randomColor())
@@ -27,7 +27,7 @@ const createWelcomeMessageEmbed = (member: GuildMember) => {
  * @param {GuildMember} member The member.
  */
 
-export const sendWelcomeMessage = async (member: GuildMember) => {
+export const sendWelcomeMessage = async (member: GuildMember): Promise<void> => {
   if (!config.GUILD_MEMBER_ADD.WELCOME_MESSAGE.ACTIVE) return
 
   const channel = await getChannel(

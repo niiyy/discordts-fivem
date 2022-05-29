@@ -10,14 +10,14 @@ export default {
   execute: async (message: Message, args: any[], client: Client) => {
     let amount = args[0]
     if (!amount || isNaN(amount) || amount > 99 || amount < 1) {
-      const embed = responseEmbed({
+      const embed: MessageEmbed = responseEmbed({
         message: t('COMMANDS.CLEAR.AMOUNT_ERROR'),
         type: 'error',
       })
       return message
-        .reply({ embeds: [embed as MessageEmbed] })
+        .reply({ embeds: [embed] })
         .then(deleteMessage)
-        .catch(err => console.log('ERROR'))
+        .catch(err => logger.error(`i hate this err: ${err}`))
     }
     ;(message.channel as TextChannel).bulkDelete(amount++).catch(err => {
       logger.error(

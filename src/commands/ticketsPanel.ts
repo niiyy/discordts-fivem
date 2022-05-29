@@ -21,7 +21,7 @@ import {
   uuid,
 } from '../utils/misc'
 
-const createTicketsEmbed = (message: Message) => {
+const createTicketsEmbed = (message: Message): MessageEmbed => {
   const guildName = message.guild?.name as string
   const guildIcon = message.guild?.iconURL() as string
 
@@ -68,7 +68,7 @@ const createButtonsRow = (
   }
 }
 
-const setCategoriePermissions = (categorie: CategoryChannel | null) => {
+const setCategoriePermissions = (categorie: CategoryChannel | null): void => {
   if (config.TICKETS.STAFF_ROLES.length !== 0 && categorie) {
     config.TICKETS.STAFF_ROLES.forEach(role => {
       categorie?.permissionOverwrites
@@ -89,7 +89,7 @@ const setCategoriePermissions = (categorie: CategoryChannel | null) => {
   }
 }
 
-const setUpCategories = (categories: Array<CategorieI>, guild: Guild) => {
+const setUpCategories = (categories: Array<CategorieI>, guild: Guild): void => {
   categories.forEach(async categorie => {
     let createdCatgorie: CategoryChannel | null = null
     await doesCategorieExist(categorie.NAME, guild).catch(async () => {
@@ -125,7 +125,7 @@ export default {
   requiredPermissions: ['ADMINISTRATOR'],
   execute: async (message: Message, args: any[], client: Client) => {
     if (!config.TICKETS.ACTIVE) {
-      const embed = responseEmbed({
+      const embed: MessageEmbed = responseEmbed({
         message: t('TICKETS.TICKETS_NOT_ACTIVATED'),
         type: 'error',
       })
@@ -136,7 +136,7 @@ export default {
     }
 
     if (config.TICKETS.CATEGORIES.length === 0) {
-      const embed = responseEmbed({
+      const embed: MessageEmbed = responseEmbed({
         message: t('TICKETS.NO_CATEGORYS'),
         type: 'error',
       })

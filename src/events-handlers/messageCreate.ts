@@ -34,7 +34,7 @@ const hasPermissionsForCommand = (
 
         resolve()
       })
-      .catch((err: any) =>
+      .catch(() =>
         reject({
           type: 'MEMBER_FETCHING',
           message: t('ERRORS.FETCHING_MEMBER'),
@@ -48,7 +48,7 @@ const hasPermissionsForCommand = (
  * @param {Client} client Your client instance.
  */
 
-export const isMessageCommand = (message: Message, client: Client) => {
+export const isMessageCommand = (message: Message, client: Client): void => {
   if (!message.content.startsWith(config.CLIENT.PREFIX) || message.author.bot)
     return
   const args = message.content.slice(config.CLIENT.PREFIX.length).split(/ +/)

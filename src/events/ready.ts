@@ -15,7 +15,7 @@ export default (client: Client) => {
       return
     }
 
-    const interval = setInterval(() => {
+    const interval: NodeJS.Timer = setInterval(() => {
       setClientStatus(client, interval)
     }, config.CLIENT.STATUS.REFRESH_INTERVAL)
   }

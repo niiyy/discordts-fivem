@@ -13,8 +13,8 @@ import { writeFile } from 'fs'
 import path from 'path'
 
 const DELETE_MESSAGE_TIMEOUT: number = 7_500
-const UUID_MAX_INT = 999_999_999
-const COLORS = ['AQUA', 'GREEN', 'YELLOW', 'PURPLE', 'GREY', 'ORANGE']
+const UUID_MAX_INT: number = 999_999_999
+const COLORS: ReadonlyArray<string> = ['AQUA', 'GREEN', 'YELLOW', 'PURPLE', 'GREY', 'ORANGE']
 
 /**
  * @param {string} fileName The file to remove the extension.
@@ -45,7 +45,7 @@ export const getChannel = (src: any, id: string): Promise<GuildChannel> =>
 /**
  * @param {Message} message The message to delete.
  */
-export const deleteMessage = (message: Message) => {
+export const deleteMessage = (message: Message): void => {
   setTimeout(() => {
     message.delete()
   }, DELETE_MESSAGE_TIMEOUT)
@@ -55,9 +55,9 @@ export const deleteMessage = (message: Message) => {
  * @param {Message} message your message.
  * @param {string} type your embed type can be ('error' | 'succes')
  */
-export const responseEmbed = ({ message, type }: SimpleEmbedI) => {
-  const color = type === 'error' ? '#FF0000' : '#2EFF00'
-  const embed = new MessageEmbed()
+export const responseEmbed = ({ message, type }: SimpleEmbedI): MessageEmbed => {
+  const color: ColorResolvable = type === 'error' ? '#FF0000' : '#2EFF00'
+  const embed: MessageEmbed = new MessageEmbed()
     .setDescription(message)
     .setColor(color)
     .setTimestamp()
@@ -82,7 +82,7 @@ export const randomColor = (): ColorResolvable => {
 /**
  * * THE TYPE CAN BE CHANGED IN NEXT V.
  */
-export const saveJson = (type: 'config') => {
+export const saveJson = (type: 'config'): void => {
   const file = type === 'config' ? config : null
   const filePath =
     type === 'config' ? path.resolve(__dirname, '../config/config.json') : null
